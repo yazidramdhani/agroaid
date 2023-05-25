@@ -1,4 +1,5 @@
 const homeHandler = (request, h) => {
+
   const response = h.response({
     status: 'success',
     message: 'berhasil terconnect'

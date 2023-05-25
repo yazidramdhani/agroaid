@@ -1,5 +1,6 @@
 const Hapi = require('@hapi/hapi');
 const routes = require('./routes');
+const db = require("../models")
 
 const init = async () => {
   const server = Hapi.server({
@@ -18,4 +19,6 @@ const init = async () => {
   console.log(`Server berjalan pada ${server.info.uri}`);
 };
 
-init();
+db.sequelize.sync().then((req) => {
+  init();
+})
