@@ -1,5 +1,6 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $email = $_POST["email"];
     $username = $_POST["username"];
     $password = $_POST["password"];
     
@@ -8,7 +9,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         die("Connection failed: " . mysqli_connect_error());
     }
 
-    $sql = "INSERT INTO users (username, password) VALUES ('$username', '$password')";
+     $sql = "INSERT INTO users (email, username, password) VALUES ('$email', '$username', '$password')";
 
     if (mysqli_query($conn, $sql)) {
         echo "Registration successful";
@@ -28,6 +29,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <body>
     <h2>Register</h2>
     <form method="POST" action="register.php">
+        <label for="email">Email:</label>
+        <input type="email" name="email" required><br>
+        
         <label for="username">Username:</label>
         <input type="text" name="username" required><br>
 
