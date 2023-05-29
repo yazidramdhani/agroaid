@@ -1,6 +1,9 @@
 const Hapi = require('@hapi/hapi');
 const routes = require('./routes');
 const db = require("./models")
+const {User} = require("./models");
+
+const JWT_SECRET = 'your-secret-key';
 
 const init = async () => {
   const server = Hapi.server({
@@ -12,6 +15,23 @@ const init = async () => {
       },
     },
   });
+
+  server.register(require('hapi-auth-jwt2'));
+
+  await server.auth.strategy('jwt', 'jwt', {
+    key: JWT_SECRET,
+    verifyOptions: { algorithms: ['HS256'] },
+    validate: async (decoded, request) => {
+      const userId = decoded.userId
+      const existingUser = await User.findOne({ where: { userId } });
+      if (!existingUser) {
+          return { isValid: false };
+      }
+      return { isValid: true, credentials: decoded };
+    },
+  });
+
+  server.auth.default('jwt');
 
   server.route(routes);
 
