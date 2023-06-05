@@ -1,16 +1,10 @@
 import numpy as np
 
 def preprocess_image(image):
-    # Keras PIL
     image = image.resize((224,224))
     image_array = np.array(image)
     image_array = image_array / 255.0
     image_array = np.expand_dims(image_array, axis=0)
-
-    # img = image.resize((224,224))
-    # image_array = img_to_array(img)
-    # image_array = image_array / 255.0
-    # image_array = np.expand_dims(image_array, axis=0)
 
     return image_array
 
