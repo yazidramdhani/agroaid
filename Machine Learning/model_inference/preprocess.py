@@ -1,5 +1,4 @@
 import numpy as np
-# from keras.utils import img_to_array, load_img
 
 def preprocess_image(image):
     # Keras PIL
@@ -22,7 +21,7 @@ def inference_pred(model, image, labels):
     predicted_class = np.argmax(prediction)
     get_class = labels[predicted_class]
 
-    # # TF Lite
+    # # For TF Lite, Don't uncomment yet
     # processed_image = preprocess_image(image)
     # input_details = interpreter.get_input_details()
     # output_details = interpreter.get_output_details()
