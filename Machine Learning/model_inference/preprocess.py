@@ -15,15 +15,4 @@ def inference_pred(model, image, labels):
     predicted_class = np.argmax(prediction)
     get_class = labels[predicted_class]
 
-    # # For TF Lite, Don't uncomment yet
-    # processed_image = preprocess_image(image)
-    # input_details = interpreter.get_input_details()
-    # output_details = interpreter.get_output_details()
-
-    # interpreter.set_tensor(input_details[0]['index'], processed_image)
-    # interpreter.invoke()
-    # prediction = interpreter.get_tensor(output_details[0]['index'])
-    # predicted_class = np.argmax(prediction)
-    # get_class = grape_labels[predicted_class]
-
     return get_class
