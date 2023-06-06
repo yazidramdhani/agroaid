@@ -1,8 +1,15 @@
 import numpy as np
+from keras.utils import img_to_array
 
 def preprocess_image(image):
+    # image = image.resize((224,224))
+    # image_array = np.array(image)
+    # image_array = image_array / 255.0
+    # image_array = np.expand_dims(image_array, axis=0)
+
+    # Keras
     image = image.resize((224,224))
-    image_array = np.array(image)
+    image_array = img_to_array(image)
     image_array = image_array / 255.0
     image_array = np.expand_dims(image_array, axis=0)
 
