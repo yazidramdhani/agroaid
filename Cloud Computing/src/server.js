@@ -3,7 +3,7 @@ const routes = require('./routes');
 const db = require("./models")
 const {User} = require("./models");
 
-const JWT_SECRET = 'your-secret-key';
+const JWT_SECRET = process.env.JWT_SECRET;
 
 const init = async () => {
   const server = Hapi.server({
