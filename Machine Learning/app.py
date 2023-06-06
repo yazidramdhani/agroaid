@@ -8,9 +8,9 @@ from model_inference.preprocess import inference_pred
 app = Flask(__name__)
 
 # TODO Add Model
-grape_model = keras.models.load_model('./models/grape_model')
-pepperbell_model = keras.models.load_model('./models/pepperbell_model')
-potato_model = keras.models.load_model('./models/potato_model')
+grape_model = keras.models.load_model('./models/grape_model/grape_model.h5')
+pepperbell_model = keras.models.load_model('./models/pepperbell_model/pepperbell_model.h5')
+potato_model = keras.models.load_model('./models/potato_model/potato_model.h5')
 
 cherry_model = keras.models.load_model('./models/cherry/cherry_model.h5', compile=False)
 cherry_model.compile(optimizer=tf.optimizers.Adam(learning_rate=0.001), loss='categorical_crossentropy', metrics=['accuracy'])
