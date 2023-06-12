@@ -1,0 +1,21 @@
+# Compiled Python files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Models directory
+/models/
+
+# Virtual environment
+venv/
+env/
+myenv/
+/myenv/
+
+# IDE specific files
+.vscode/
+*.code-workspace
+
+# Logs
+*.log

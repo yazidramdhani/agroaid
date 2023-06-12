@@ -1,0 +1,27 @@
+{
+  "name": "cloud-computing",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./src/server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "set NODE_ENV=development&&nodemon src/server.js",
+    "prod": "export NODE_ENV=production&&node ./src/server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@hapi/hapi": "^21.3.2",
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^16.0.3",
+    "fs": "^0.0.1-security",
+    "hapi-auth-jwt2": "^10.4.0",
+    "jsonwebtoken": "^9.0.0",
+    "mysql2": "^3.3.2",
+    "path": "^0.12.7",
+    "sequelize": "^6.31.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  }
+}
