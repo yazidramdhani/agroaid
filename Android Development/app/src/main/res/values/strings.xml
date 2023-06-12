@@ -25,7 +25,8 @@
     <string name="login">Login</string>
     <string name="signup">Sign Up</string>
     <string name="haveAcc">Have an account?</string>
-    <string name="profile">Profile</string>
+    <string name="account">Account</string>
+    <string name="my_account">My Account</string>
     <string name="notifications">Notifications</string>
     <string name="forum">Forum</string>
     <string name="home">Home</string>

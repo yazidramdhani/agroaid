@@ -21,8 +21,8 @@
         android:title="@string/notifications" />
 
     <item
-        android:id="@+id/profileFragment"
+        android:id="@+id/accountFragment"
         android:icon="@drawable/ic_user"
-        android:title="@string/profile" />
+        android:title="@string/account" />
 
 </menu>
