@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">Agroaid</string>
+    <string name="action_settings">Settings</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="home_label">Home</string>
+    <string name="forum_label">Forum</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+    <string name="name_input">Name</string>
+    <string name="uname_input">Username</string>
+    <string name="email_input">Email</string>
+    <string name="pass_input">Password</string>
+    <string name="repass_input">Confirm Password</string>
+    <string name="dummy">This is a dummy text</string>
+    <string name="cam">Camera</string>
+
+    <string name="lorem_ipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in scelerisque sem. Mauris volutpat, dolor id interdum ullamcorper, risus dolor egestas lectus, sit amet mattis purusdui nec risus. Maecenas non sodales nisi, vel dictum dolor. Class aptent taciti sociosqu adlitora torquent per conubia nostra, per inceptos himenaeos. Suspendisse blandit eleifenddiam, vel rutrum tellus vulputate quis. Aliquam eget libero aliquet, imperdiet nisl a,ornare ex. Sed rhoncus est ut libero porta lobortis. Fusce in dictum tellus.\n\nSuspendisse interdum ornare ante. Aliquam nec cursus lorem. Morbi id magna felis. Vivamusegestas, est a condimentum egestas, turpis nisl iaculis ipsum, in dictum tellus dolor sedneque. Morbi tellus erat, dapibus ut sem a, iaculis tincidunt dui. Interdum et malesuadafames ac ante ipsum primis in faucibus. Curabitur et eros porttitor, ultricies urna vitae,molestie nibh.
+        Phasellus at commodo eros, non aliquet metus. Sed maximus nisl nec dolor bibendum, vel congue leo egestas.
+    </string>
+    <string name="scanned_img">Scanned Images</string>
+    <string name="hello">Hi, </string>
+    <string name="welcome">Welcome back to Agroaid</string>
+    <string name="last_scan">Last scanned</string>
+    <string name="dontHaveAcc">Don\'t have an account?</string>
+    <string name="login">Login</string>
+    <string name="signup">Sign Up</string>
+    <string name="haveAcc">Have an account?</string>
+    <string name="profile">Profile</string>
+    <string name="notifications">Notifications</string>
+    <string name="forum">Forum</string>
+    <string name="home">Home</string>
+</resources>
