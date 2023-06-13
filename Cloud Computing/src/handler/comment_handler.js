@@ -86,6 +86,6 @@ const getAllRepliesByComment = async (request, h) => {
 module.exports = {
   addComment,
   getAllCommentsByPost,
-  addReplyToComment,
+  addReply,
   getAllRepliesByComment
 };
