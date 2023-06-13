@@ -35,7 +35,7 @@ const getAllCommentsByPost = async (request, h) => {
     return response;
 };
 
-const addReplyToComment = async (request, h) => {
+const addReply = async (request, h) => {
     const { commentId, content } = request.payload;
     const { userId } = request.auth.credentials;
 
