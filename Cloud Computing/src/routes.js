@@ -57,6 +57,11 @@ const routes = [
    },
    {
       method: 'POST',
+      path: '/posts/{postId}/like',
+      handler: likePost,
+   },
+   {
+      method: 'POST',
       path: '/posts/{postId}/comments',
       handler: addComment,
    },
