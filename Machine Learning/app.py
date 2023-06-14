@@ -168,7 +168,24 @@ def prediction_cherry():
     
     predicted_disease = inference_pred(cherry_model, image, cherry_labels)
 
-    return jsonify({'prediction':predicted_disease})
+    if predicted_disease == 'Cherry_(including_sour)___Powdery_mildew':
+        return jsonify({
+            'prediction':'Sakit',
+            'disease':'Powdery Mildew',
+            'cause':'Penyakit powdery mildew pada tanaman cherry disebabkan oleh infeksi jamur Erysiphe spp. atau Podosphaera spp.',
+            'symptom':'Powdery mildew pada tanaman cherry ditandai dengan lapisan serbuk putih atau abu-abu pada daun, tangkai, dan buah, serta deformasi daun dan buah.',
+            'solution':'Langkah-langkah pengendalian powdery mildew meliputi praktik sanitasi, pengaturan kelembaban yang baik, peningkatan sirkulasi udara, penggunaan bahan alami, dan jika diperlukan, penggunaan fungisida yang disetujui.',
+            'medicine':'Beberapa fungisida yang umum digunakan untuk mengendalikan powdery mildew pada tanaman cherry antara lain azoxystrobin, myclobutanil, thiophanate-methyl, dan triadimefon, dengan mematuhi petunjuk dan dosis yang tertera pada label produk serta jangka waktu henti panen yang ditetapkan.'
+        })
+    else:
+        return jsonify({
+            'prediction': 'Sehat',
+            'disease': None,
+            'cause': None,
+            'symptom': None,
+            'solution': None,
+            'medicine': None
+        })
 
 @app.route('/predict-peach', methods=['POST'])
 def prediction_peach():
@@ -180,7 +197,24 @@ def prediction_peach():
     
     predicted_disease = inference_pred(peach_model, image, peach_labels)
 
-    return jsonify({'prediction':predicted_disease})
+    if predicted_disease == 'Peach___Bacterial_spot':
+        return jsonify({
+            'prediction': 'Sakit',
+            'disease': 'Bacterial Spot',
+            'cause': 'Penyakit bacterial spot pada tanaman peach disebabkan oleh infeksi bakteri Xanthomonas arboricola pv. pruni.',
+            'symptom': 'Bacterial spot pada tanaman peach ditandai dengan munculnya bercak-bercak berwarna cokelat atau hitam pada daun, tangkai, dan buah. Bercak-bercak ini seringkali memiliki pinggiran yang lebih gelap dan ukuran yang bervariasi. Munculnya lepuhan pada daun juga dapat terjadi.',
+            'solution': 'Langkah-langkah pengendalian bacterial spot meliputi praktik sanitasi, pengaturan kelembaban yang baik, pemangkasan dan pembuangan bagian tanaman yang terinfeksi, penggunaan varietas tahan, dan penggunaan fungisida yang mengandung bahan aktif tembaga.',
+            'medicine': 'Beberapa fungisida yang mengandung tembaga seperti kuprum oksiklorida atau kuprum hidroksida dapat digunakan untuk mengendalikan bacterial spot pada tanaman peach. Pastikan untuk mengikuti petunjuk dan dosis yang tertera pada label produk serta mematuhi jangka waktu henti panen yang ditetapkan.'
+        })
+    else:
+        return jsonify({
+            'prediction': 'Sehat',
+            'disease': None,
+            'cause': None,
+            'symptom': None,
+            'solution': None,
+            'medicine': None
+        })
 
 @app.route('/predict-strawberry', methods=['POST'])
 def prediction_strawberry():
@@ -192,4 +226,21 @@ def prediction_strawberry():
     
     predicted_disease = inference_pred(strawberry_model, image, strawberry_labels)
 
-    return jsonify({'prediction':predicted_disease})
+    if predicted_disease == 'Strawberry___Leaf_scorch':
+        return jsonify({
+            'prediction': 'Sakit',
+            'disease': 'Leaf Scorch',
+            'cause': 'Penyakit leaf scorch pada tanaman strawberry dapat disebabkan oleh beberapa faktor, termasuk infeksi bakteri seperti Xanthomonas fragariae atau patogen jamur seperti Colletotrichum spp.',
+            'symptom': 'Leaf scorch pada tanaman strawberry ditandai dengan kemerahan, pengeringan, dan kekeringan pada tepi daun. Daun-daun tersebut kemudian menjadi coklat, kering, dan mudah pecah. Bisa juga terjadi bercak-bercak berwarna merah kecoklatan atau ungu pada daun dan tangkai.',
+            'solution': 'Langkah-langkah pengendalian leaf scorch meliputi praktik sanitasi, pengaturan kelembaban yang baik, pengelolaan irigasi yang tepat, pemangkasan dan pembuangan bagian tanaman yang terinfeksi, serta penggunaan varietas yang tahan terhadap penyakit.',
+            'medicine': 'Penggunaan fungisida atau bakterisida yang sesuai dapat membantu mengendalikan penyakit leaf scorch pada tanaman strawberry. Pilihlah produk yang mengandung bahan aktif yang direkomendasikan untuk melawan patogen yang menyebabkan penyakit tersebut. Pastikan untuk mengikuti petunjuk dan dosis yang tertera pada label produk serta mematuhi jangka waktu henti panen yang ditetapkan.'
+        })
+    else:
+        return jsonify({
+            'prediction': 'Sehat',
+            'disease': None,
+            'cause': None,
+            'symptom': None,
+            'solution': None,
+            'medicine': None
+        })
