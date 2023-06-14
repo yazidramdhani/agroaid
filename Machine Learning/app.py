@@ -57,7 +57,41 @@ def prediction_grape():
     
     predicted_disease = inference_pred(grape_model, image, grape_labels)
 
-    return jsonify({'prediction':predicted_disease})
+    if predicted_disease == "Grape___Black_rot":
+        return jsonify({
+            'prediction' : 'Sakit',
+            'disease': 'Black Rot',
+            'cause': 'Black Rot adalah penyakit tanaman anggur yang disebabkan oleh jamur bernama Guignardia bidwellii.',
+            'symptom':'Gejala utama Black Rot biasanya muncul pada buah, daun, dan tangkai anggur. Pada daun, black rot menyebabkan bercak berwarna cokelat yang dikelilingi oleh daerah kuning. Bercak ini juga bisa berkembang menjadi lebih besar dan mengakibatkan kerusakan pada daun. Tangkai anggur juga dapat terinfeksi, ditandai dengan munculnya bercak cokelat dan retakan.',
+            'solution': 'Untuk mengendalikan black rot, praktik budidaya yang baik sangat penting, seperti memangkas dan membuang bagian tanaman yang terinfeksi, menjaga kebersihan kebun, serta pengendalian kelembaban.',
+            'medicine': 'Penggunaan obat seperti fungisida dapat menjadi pilihan untuk mengendalikan penyakit ini. Fungisida yang efektif adalah yang mengandung bahan aktif seperti mankozeb, kaptan, ziram, atau klorotalonil.'})
+    
+    elif predicted_disease == "Grape___Esca_(Black_Measles)":
+        return jsonify({
+            'prediction' : 'Sakit',
+            'disease': 'Esca Black Measles',
+            'cause': 'Esca adalah penyakit serius pada tanaman anggur yang disebabkan oleh beberapa faktor,  termasuk patogen seperti jamur Phaeomoniella chlamydospora, jamur Phomopsis viticola atau Phomopsis spp., serta kondisi lingkungan dan faktor genetik tanaman.',
+            'symptom':'Gejala awal Esca biasanya terlihat pada daun yang terinfeksi. Daun-daun tersebut dapat menunjukkan pola perubahan warna seperti bercak-bercak coklat atau merah, serta kemudian berkembang menjadi daun kering dan mati. Batang dan ranting juga dapat menunjukkan gejala berupa perubahan warna, seperti pewarnaan merah atau coklat. Infeksi yang lebih parah dapat menyebabkan keguguran daun, penurunan pertumbuhan, dan kematian tanaman.',
+            'solution': 'Untuk mengendalikan penyakit ini, bakar dan buang semua bagian tamanan yang terinfeksi untuk mencegah penyebaran penyakit. Selain itu, pertahankan kondisi kelembaban yang seimbang untuk mengurangi kondisi yang mendukung pertumbuhan jamur. Pemupukan yang tepat demi memberi nutrisi yang seimbang kepada tanaman anggur juga perlu diterapkan agar tanaman anggur tetap sehat dan kuat.',
+            'medicine': 'Tidak ada obat yang efektif untuk penyakit ini. Oleh sebab itu, mohon lakukan pencegahan dengan cara yang sudah dijelaskan sebelumnya.'})
+    
+    elif predicted_disease == "Grape___Leaf_blight_(Isariopsis_Leaf_Spot)":
+        return jsonify({
+            'prediction' : 'Sakit',
+            'disease': 'Leaf Blight Isariopsis',
+            'cause': 'Penyakit Leaf Blight pada anggur disebabkan oleh infeksi jamur Guignardia aesculi, Stagonospora ampelophaga, atau Elsinoë ampelina. Infeksi ini biasanya terjadi saat kondisi cuaca lembap, dengan suhu yang hangat.',
+            'symptom':'Gejala Leaf Blight pada terlihat pada bagian daun. Munculnya bercak berwarna cokelat atau hitam pada daun anggur. Bercak ini dapat membesar dan menggabung menjadi area yang lebih besar, mengakibatkan nekrosis pada daun. Daun yang terinfeksi dapat mengering, menggulung, atau bahkan gugur.',
+            'solution': 'Untuk mengendalikan penyakit ini, hilangkan semua daun-daun yang terinfeksi dan membuangnya dari area tanaman untuk mencegah penyebaran penyakit. Selain itu, hindari juga penyiraman yang berlebihan untuk mengurangi kelembaban yang menyebabkan perkembangan jamur.',
+            'medicine': 'Penggunaan obat fungisida tembaga seperti tembaga hidroksida (copper hydroxide) atau tembaga oksiklorida (copper oxychloride) dapat digunakan.'})
+    
+    else:
+        return jsonify({
+            'prediction': 'Sehat',
+            'disease' : None,
+            'cause': None,
+            'symptom':None,
+            'solution': None,
+            'medicine': None})
 
 @app.route('/predict-pepperbell', methods=['POST'])
 def prediction_pepperbell():
@@ -69,7 +103,23 @@ def prediction_pepperbell():
     
     predicted_disease = inference_pred(pepperbell_model, image, pepperbell_labels)
 
-    return jsonify({'prediction':predicted_disease})
+    if predicted_disease == "Pepper,_bell___Bacterial_spot":
+        return jsonify({
+            'prediction' : 'Sakit',
+            'disease': 'Bacterial Spot',
+            'cause': 'Penyakit Bacterial Spot pada tanaman pepperbell disebabkan oleh bakteri Xanthomonas campestris pv. vesicatoria. Bakteri ini dapat menyebar melalui air, angin, serangga, dan alat pertanian yang terkontaminasi.',
+            'symptom':'Gejala penyakit ini adalah munculnya bintik-bintik kecil berwarna cokelat, hitam, atau kecokelatan pada daun, batang, dan buah. Bintik-bintik ini dapat berkembang menjadi lesi berbentuk bercak dengan tengah berwarna cokelat gelap dan pinggiran yang lebih terang. Lesi dapat memperbesar dan menggabung, mengakibatkan kerusakan pada tanaman.',
+            'solution': 'Untuk mengendalikan penyakit ini, jaga kebersihan kebun dengan membuang sisa-sisa tanaman yang terinfeksi. Hindari penggunaan alat pertanian yang terkontaminasi untuk mengurangi penyebaran bakteri. Hindari pengairan yang berlebihan dan pastikan ada sirkulasi udara yang baik di sekitar tanaman untuk mengurangi kondisi lembab yang disukai oleh bakteri.',
+            'medicine': 'Penggunaan obat fungisida tembaga seperti tembaga hidroksida (copper hydroxide) atau tembaga oksiklorida (copper oxychloride) dapat digunakan.'})
+    
+    else:
+        return jsonify({
+            'prediction': 'Sehat',
+            'disease': None,
+            'cause': None,
+            'symptom': None,
+            'solution': None,
+            'medicine': None})
 
 @app.route('/predict-potato', methods=['POST'])
 def prediction_potato():
@@ -81,7 +131,32 @@ def prediction_potato():
     
     predicted_disease = inference_pred(potato_model, image, potato_labels)
 
-    return jsonify({'prediction':predicted_disease})
+    if predicted_disease == "Potato___Early_blight":
+        return jsonify({
+            'prediction': 'Sakit',
+            'disease': 'Early Blight',
+            'cause': 'Penyakit Early Blight pada tanaman kentang disebabkan oleh jamur bernama Alternaria solani. Jamur ini dapat menyebar melalui spora yang terbawa oleh angin, air, atau alat pertanian yang terkontaminasi.',
+            'symptom':'Gejala penyakit ini adalah munculnya bercak-bercak berbentuk bulat atau oval pada daun kentang yang lebih tua. Bercak-bercak tersebut awalnya berwarna cokelat dengan tepi yang lebih gelap dan lebih terang di bagian tengahnya. Seiring perkembangan penyakit, bercak-bercak dapat memperbesar dan membentuk lesi yang mengering.',
+            'solution': 'Untuk mengendalikan penyakit ini, penting untuk menghilangkan daun-daun yang terinfeksi atau tumbuhan yang telah mati dari area tanaman. Buang atau hancurkan bagian-bagian tanaman yang terinfeksi untuk mencegah penyebaran penyakit. Hindari menanam kentang atau tanaman dari keluarga solanaceae (misalnya, tomat, terong) pada lokasi yang sama setiap tahun. Rotasi tanaman dapat membantu mengurangi tingkat infeksi jamur. Penting juga untuk mengurangi kelembaban.',
+            'medicine': 'Penggunaan obat fungisida seperti chlorothalonil dan mancozeb dapat digunakan.'})
+    
+    elif predicted_disease == "Potato___Late_blight":
+        return jsonify({
+            'prediction': 'Sakit',
+            'disease': 'Late Blight',
+            'cause': 'Penyakit Late Blight pada tanaman kentang disebabkan oleh jamur bernama Phytophthora infestans. Jamur ini dapat menyebar melalui spora yang terbawa oleh angin atau air, serta dapat menginfeksi daun, batang, dan buah kentang.',
+            'symptom':'Munculnya bercak hijau keabu-abuan pada daun yang kemudian berubah menjadi cokelat kehitaman. Bercak-bercak ini berkembang dengan cepat dan daun-daun yang terinfeksi dapat melipat, mengering, dan menghitam.',
+            'solution': 'Untuk mengendalikan penyakit ini, penting untuk menghilangkan daun-daun yang terinfeksi atau tumbuhan yang telah mati dari area tanaman. Buang atau hancurkan bagian-bagian tanaman yang terinfeksi untuk mencegah penyebaran penyakit. Hindari menanam kentang atau tanaman dari keluarga solanaceae (misalnya, tomat, terong) pada lokasi yang sama setiap tahun. Rotasi tanaman dapat membantu mengurangi tingkat infeksi jamur. Penting juga untuk mengurangi kelembaban.',
+            'medicine': 'Penggunaan obat fungisida seperti mancozeb, chlorothalonil, fluazinam, atau fosetil-aluminium dapat digunakan.'})
+    
+    else:
+        return jsonify({
+            'prediction': 'Sehat',
+            'disease': None,
+            'cause': None,
+            'symptom': None,
+            'solution': None,
+            'medicine': None})
 
 @app.route('/predict-cherry', methods=['POST'])
 def prediction_cherry():
