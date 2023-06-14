@@ -1,4 +1,4 @@
-const {Reply} = require("../models")
+const {Reply, User} = require("../models")
 
 const addReply = async (request, h) => {
     const { content } = request.payload;
@@ -18,7 +18,12 @@ const addReply = async (request, h) => {
 
 const getAllRepliesByComment = async (request, h) => {
     const { commentId } = request.params;
-    const replies = await Reply.findAll({where: { commentId : commentId}})
+    const replies = await Reply.findAll({where: { commentId : commentId}, 
+        include: {
+            model: User,
+            attributes: { exclude: ['password'] }
+        }
+    })
     
     const response = h.response({
         status: 'success',

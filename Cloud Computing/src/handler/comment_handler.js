@@ -1,4 +1,4 @@
-const {Comment} = require("../models")
+const {Comment, User} = require("../models")
 
 const addComment = async (request, h) => {
   const { content } = request.payload;
@@ -18,7 +18,12 @@ const addComment = async (request, h) => {
 
 const getAllCommentsByPost = async (request, h) => {
     const { postId } = request.params;
-    const comments = await Comment.findAll({where: { postId : postId}})
+    const comments = await Comment.findAll({where: { postId : postId}, 
+      include: {
+        model: User,
+        attributes: { exclude: ['password'] }
+      }
+    })
     
     const response = h.response({
         status: 'success',
