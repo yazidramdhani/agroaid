@@ -33,7 +33,29 @@ const getAllPosts = async (request, h) => {
     return response;
 };
 
+const likePost = async (request, h) => {
+  const { postId } = request.params;
+  const post = await Post.findByPk(postId);
+  
+  if (!post) {
+    return h.response({
+      status: 'error',
+      message: 'Post not found',
+    }).code(404);
+  }
+  
+  post.likes += 1;
+  await post.save();
+  
+  return h.response({
+    status: 'success',
+    message: 'Post liked successfully',
+    data: post,
+  }).code(200);
+};
+
 module.exports = {
-    addPost,
-    getAllPosts
+  addPost,
+  getAllPosts,
+  likePost,
 };
