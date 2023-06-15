@@ -10,10 +10,12 @@ const {
 
 const {
    addPost,
-   getAllPosts
+   getAllPosts,
+   likePost
 } = require('./handler/post_handler');
 const { addComment, getAllCommentsByPost } = require('./handler/comment_handler');
 const { addReply, getAllRepliesByComment } = require('./handler/reply_handler');
+const { predictImage, getAllPredictions } = require('./handler/prediction_handler');
 
 const routes = [
    {
@@ -79,6 +81,24 @@ const routes = [
       method: 'GET',
       path: '/comments/{commentId}/replies',
       handler: getAllRepliesByComment,
+   },
+   {
+      method: 'POST',
+      path: '/predict',
+      handler: predictImage,
+      options: {
+          payload: {
+              output: 'stream',
+              parse: true,
+              allow: 'multipart/form-data',
+              multipart: true
+          }
+      }
+   },
+   {
+      method: 'GET',
+      path: '/predictions',
+      handler: getAllPredictions,
    },
 ];
 

@@ -1,0 +1,35 @@
+version: '2'
+services:
+  web:
+    image: farrel67/agroaid:latest
+    restart: always
+    ports:
+      - "9000:9000"
+    volumes:
+      - ./file-storage:/file-storage
+      - ./log:/log
+    env_file:
+      - .env
+    depends_on:
+      - db
+    networks:
+      - frontend-network
+      - backend-network
+
+  db:
+    image: mysql:5.7
+    restart: always
+    env_file:
+      - .env
+    volumes:
+      - mysql-db-volume:/var/lib/mysql
+    networks:
+      - backend-network
+
+volumes:
+  mysql-db-volume:
+
+networks:
+  frontend-network:
+    driver: bridge
+  backend-network:

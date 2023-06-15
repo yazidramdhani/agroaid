@@ -16,7 +16,7 @@ const addPost = async (request, h) => {
 };
 
 const getAllPosts = async (request, h) => {
-    posts = await Post.findAll({ 
+    const posts = await Post.findAll({ 
         include: {
             model: User,
             attributes: { exclude: ['password'] }
