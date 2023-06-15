@@ -11,7 +11,8 @@ const {
 const {
    addPost,
    getAllPosts,
-   likePost
+   likePost,
+   unlikePost
 } = require('./handler/post_handler');
 const { addComment, getAllCommentsByPost } = require('./handler/comment_handler');
 const { addReply, getAllRepliesByComment } = require('./handler/reply_handler');
