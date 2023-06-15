@@ -65,6 +65,11 @@ const routes = [
    },
    {
       method: 'POST',
+      path: '/posts/{postId}/unlike',
+      handler: unlikePost,
+   },
+   {
+      method: 'POST',
       path: '/posts/{postId}/comments',
       handler: addComment,
    },
@@ -72,6 +77,16 @@ const routes = [
       method: 'GET',
       path: '/posts/{postId}/comments',
       handler: getAllCommentsByPost,
+   },
+   {
+      method: "POST",
+      path: "/comments/{commentId}/like",
+      handler: likeComment,
+   },
+   {
+      method: "POST",
+      path: "/comments/{commentId}/unlike",
+      handler: unlikeComment,
    },
    {
       method: 'POST',
@@ -82,6 +97,16 @@ const routes = [
       method: 'GET',
       path: '/comments/{commentId}/replies',
       handler: getAllRepliesByComment,
+   },
+   {
+      method: "POST",
+      path: "/reply/{replyId}/like",
+      handler: likeReply,
+   },
+   {
+      method: "POST",
+      path: "/reply/{replyId}/unlike",
+      handler: unlikeReply,
    },
    {
       method: 'POST',
