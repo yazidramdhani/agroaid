@@ -54,8 +54,37 @@ const likePost = async (request, h) => {
   }).code(200);
 };
 
+const unlikePost = async (request, h) => {
+  const { postId } = request.params;
+  const post = await Post.findByPk(postId);
+
+  if (!post) {
+    return h
+      .response({
+        status: "error",
+        message: "Post not found",
+      })
+      .code(404);
+  }
+
+  if (post.likes > 0) {
+    post.likes -= 1;
+  }
+
+  await post.save();
+
+  return h
+    .response({
+      status: "success",
+      message: "Post unliked successfully",
+      data: post,
+    })
+    .code(200);
+};
+
 module.exports = {
   addPost,
   getAllPosts,
   likePost,
+  unlikePost,
 };
