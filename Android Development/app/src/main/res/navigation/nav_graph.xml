@@ -15,15 +15,5 @@
         android:name="com.bangkit.agroaid.ui.ForumFragment"
         android:label="@string/forum_label"
         tools:layout="@layout/forum_fragment"/>
-    <fragment
-        android:id="@+id/notifFragment"
-        android:name="com.bangkit.agroaid.ui.NotifFragment"
-        android:label="@string/notifications"
-        tools:layout="@layout/notif_fragment"/>
-    <fragment
-        android:id="@+id/accountFragment"
-        android:name="com.bangkit.agroaid.ui.AccountFragment"
-        android:label="@string/account"
-        tools:layout="@layout/account_fragment"/>
 
 </navigation>

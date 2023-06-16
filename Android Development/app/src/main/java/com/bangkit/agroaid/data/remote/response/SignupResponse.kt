@@ -1,8 +1,8 @@
-package com.bangkit.agroaid.data.response
+package com.bangkit.agroaid.data.remote.response
 
 import com.google.gson.annotations.SerializedName
 
-data class LoginResponse(
+data class SignupResponse(
 
 	@field:SerializedName("message")
 	val message: String,

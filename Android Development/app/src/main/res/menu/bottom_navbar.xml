@@ -7,22 +7,11 @@
         android:title="@string/home" />
 
     <item
-        android:id="@+id/forumFragment"
-        android:icon="@drawable/ic_forum"
-        android:title="@string/forum" />
-
-    <item
         android:id="@+id/emptyPlaceholder"
         android:title="" />
 
     <item
-        android:id="@+id/notifFragment"
-        android:icon="@drawable/ic_bell"
-        android:title="@string/notifications" />
-
-    <item
-        android:id="@+id/accountFragment"
-        android:icon="@drawable/ic_user"
-        android:title="@string/account" />
-
+        android:id="@+id/forumFragment"
+        android:icon="@drawable/ic_forum"
+        android:title="@string/forum" />
 </menu>

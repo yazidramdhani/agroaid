@@ -1,11 +1,12 @@
-package com.bangkit.agroaid.data.response
+package com.bangkit.agroaid.data.remote.response
 
+import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
+import kotlinx.parcelize.Parcelize
 
-data class ForumPostResponse(
-
+data class CommentResponse(
 	@field:SerializedName("data")
-	val data: List<DataItem>,
+	val data: List<ForumComments>,
 
 	@field:SerializedName("message")
 	val message: String,
@@ -14,8 +15,8 @@ data class ForumPostResponse(
 	val status: String
 )
 
-data class User(
-
+@Parcelize
+data class UserComment(
 	@field:SerializedName("createdAt")
 	val createdAt: String,
 
@@ -30,21 +31,21 @@ data class User(
 
 	@field:SerializedName("updatedAt")
 	val updatedAt: String
-)
+): Parcelable
 
-data class DataItem(
-
+@Parcelize
+data class ForumComments(
 	@field:SerializedName("createdAt")
 	val createdAt: String,
 
 	@field:SerializedName("User")
-	val user: User,
+	val user: UserComment,
+
+	@field:SerializedName("commentId")
+	val commentId: String,
 
 	@field:SerializedName("postId")
 	val postId: String,
-
-	@field:SerializedName("title")
-	val title: String,
 
 	@field:SerializedName("userId")
 	val userId: String,
@@ -57,4 +58,4 @@ data class DataItem(
 
 	@field:SerializedName("updatedAt")
 	val updatedAt: String
-)
+): Parcelable

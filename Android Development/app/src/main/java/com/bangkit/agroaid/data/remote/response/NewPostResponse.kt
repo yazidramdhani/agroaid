@@ -1,16 +1,16 @@
-package com.bangkit.agroaid.data.response
+package com.bangkit.agroaid.data.remote.response
 
 import com.google.gson.annotations.SerializedName
 
 data class NewPostResponse(
 
-	@field:SerializedName("data")
+    @field:SerializedName("data")
 	val data: Data,
 
-	@field:SerializedName("message")
+    @field:SerializedName("message")
 	val message: String,
 
-	@field:SerializedName("status")
+    @field:SerializedName("status")
 	val status: String
 )
 

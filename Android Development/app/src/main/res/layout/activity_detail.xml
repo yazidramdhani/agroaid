@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".ui.PredictionDetailActivity">
+
+    <TextView
+        android:id="@+id/namaHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/popins_med"
+        android:text="Nama Penyakit"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="@+id/kondisiHeader"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.755"
+        app:layout_constraintStart_toEndOf="@+id/kondisiHeader"
+        app:layout_constraintTop_toTopOf="@+id/kondisiHeader" />
+
+    <TextView
+        android:id="@+id/tv_symptom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/popins_reg"
+        android:textAlignment="viewStart"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/gejalaHeader"
+        app:layout_constraintTop_toBottomOf="@+id/gejalaHeader"
+        tools:text="@tools:sample/lorem" />
+
+    <ImageView
+        android:id="@+id/iv_history_detail"
+        android:layout_width="350dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="64dp"
+        android:scaleType="fitCenter"
+
+        android:transitionName="image"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src='@drawable/ic_launcher_background' />
+
+    <TextView
+        android:id="@+id/tv_disease"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/popins_med"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/namaHeader"
+        app:layout_constraintTop_toBottomOf="@+id/namaHeader"
+        tools:text="@tools:sample/lorem" />
+
+    <TextView
+        android:id="@+id/tv_solution"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/popins_med"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        app:layout_constraintStart_toStartOf="@+id/solusiHeader"
+        app:layout_constraintTop_toBottomOf="@+id/solusiHeader"
+        tools:text="@tools:sample/lorem" />
+
+    <TextView
+        android:id="@+id/tv_prediction"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/popins_med"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toStartOf="@+id/tv_disease"
+        app:layout_constraintStart_toStartOf="@+id/kondisiHeader"
+        app:layout_constraintTop_toBottomOf="@+id/kondisiHeader"
+        tools:text="@tools:sample/lorem" />
+
+    <TextView
+        android:id="@+id/tv_cause"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/popins_med"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toStartOf="@+id/tv_solution"
+        app:layout_constraintHorizontal_bias="0.656"
+        app:layout_constraintStart_toStartOf="@+id/penyebabHeader"
+        app:layout_constraintTop_toBottomOf="@+id/penyebabHeader"
+        tools:text="@tools:sample/lorem" />
+
+    <TextView
+        android:id="@+id/tv_medicine"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/popins_med"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toStartOf="@+id/tv_solution"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/pengobatanHeader"
+        app:layout_constraintTop_toBottomOf="@+id/pengobatanHeader"
+        tools:text="@tools:sample/lorem" />
+
+    <TextView
+        android:id="@+id/kondisiHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/popins_med"
+        android:text="@string/kondisi"
+        android:textSize="15sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_history_detail" />
+
+    <TextView
+        android:id="@+id/penyebabHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/popins_med"
+        android:text="@string/sebab"
+        android:textSize="15sp"
+        app:layout_constraintStart_toStartOf="@+id/tv_symptom"
+        app:layout_constraintTop_toBottomOf="@+id/tv_symptom" />
+
+    <TextView
+        android:id="@+id/solusiHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="21dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/popins_med"
+        android:text="@string/solusi"
+        android:textSize="15sp"
+        app:layout_constraintStart_toStartOf="@+id/tv_disease"
+        app:layout_constraintTop_toBottomOf="@+id/tv_disease" />
+
+    <TextView
+        android:id="@+id/pengobatanHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="21dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/popins_med"
+        android:text="@string/pengobatan"
+        android:textSize="15sp"
+        app:layout_constraintStart_toStartOf="@+id/tv_prediction"
+        app:layout_constraintTop_toBottomOf="@+id/tv_prediction" />
+
+    <TextView
+        android:id="@+id/gejalaHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="21dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/popins_med"
+        android:text="@string/gejala"
+        android:textSize="15sp"
+        app:layout_constraintStart_toStartOf="@+id/tv_medicine"
+        app:layout_constraintTop_toBottomOf="@+id/tv_medicine" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -113,45 +113,31 @@
 
     </com.google.android.material.textfield.TextInputLayout>
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/confPassInput"
-        style="@style/Textbox.Agroaid"
-        android:layout_width="@dimen/auth_textbox_width"
-        android:layout_height="@dimen/auth_textbox_height"
-        android:layout_margin="8dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/passInput">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/confPassSignup"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="@string/repass_input"
-            android:inputType="textPassword"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.497"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/passInput" />
-
-    </com.google.android.material.textfield.TextInputLayout>
-
-
     <ImageButton
         android:id="@+id/sendButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
         android:layout_marginTop="24dp"
-        android:background="@drawable/round_btn"
+        android:background="@drawable/button_round"
         android:contentDescription="@string/login"
         android:padding="16dp"
         android:scaleType="center"
         android:src="@drawable/ic_plane"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/confPassInput" />
+        app:layout_constraintTop_toBottomOf="@+id/passInput" />
+
+    <ProgressBar
+        android:id="@+id/pb_signup"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:visibility="gone"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/signupHeading"

@@ -23,7 +23,6 @@
             android:layout_margin="8dp"
             android:contentDescription="@string/scanned_img"
             android:scaleType="centerCrop"
-            android:src="@drawable/dummy"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
