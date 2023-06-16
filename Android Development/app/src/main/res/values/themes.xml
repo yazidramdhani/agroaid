@@ -1,0 +1,26 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.Agroaid" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/accent</item>
+        <item name="colorPrimaryVariant">@color/darker_accent</item>
+        <item name="colorOnPrimary">@color/white</item>
+    </style>
+
+    <style name="Theme.Agroaid" parent="Base.Theme.Agroaid" />
+
+    <style name="Textbox.Agroaid" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="android:textColorHint">@color/gray</item>
+        <item name="boxStrokeColor">@color/textbox_stroke</item>
+        <item name="boxStrokeErrorColor">@color/err</item>
+        <item name="boxStrokeWidth">@dimen/stroke_size</item>
+        <item name="boxStrokeWidthFocused">@dimen/stroke_size</item>
+        <item name="boxCornerRadiusBottomEnd">@dimen/textbox_radius</item>
+        <item name="boxCornerRadiusBottomStart">@dimen/textbox_radius</item>
+        <item name="boxCornerRadiusTopEnd">@dimen/textbox_radius</item>
+        <item name="boxCornerRadiusTopStart">@dimen/textbox_radius</item>
+    </style>
+
+    <style name="BottomNavigationView.Active" parent="@style/TextAppearance.AppCompat.Caption">
+        <item name="android:textSize">10sp</item>
+    </style>
+</resources>
