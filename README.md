@@ -2,7 +2,7 @@
 Agroaid, a groundbreaking mobile application designed to revolutionize plant disease detection in Indonesia. Agroaid is not just another generic plant disease detection app. It is a locally-built solution tailored specifically to the needs of Indonesian farmers and gardening enthusiasts, leveraging the power of deep learning and the familiarity of the Indonesian language.
 
 ## Training the Model
-ini di isi anak ml aja
+This project consist of 9 different models. To train the model, you can use [apple-corn-tomato](https://github.com/farreljordan80/agroaid/blob/main/Machine%20Learning/apple-corn-tomato/Apple%2CCorn%2CTomato.ipynb) notebook, [cherry-peach-strawberry](https://github.com/farreljordan80/agroaid/blob/main/Machine%20Learning/cherry-peach-strawberry/cherry-peach-strawberry.ipynb) notebook, and [grape-pepperbell-potato](https://github.com/farreljordan80/agroaid/blob/main/Machine%20Learning/grape-pepperbell-potato/grape-peperbell-potato-model.ipynb) notebook.
 
 ## Creating VM Instances
 1. Open the GCP console and log in to the desired project.
