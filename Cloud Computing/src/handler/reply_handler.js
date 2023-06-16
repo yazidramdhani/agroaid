@@ -1,4 +1,4 @@
-const {Reply} = require("../models")
+const {Reply, User} = require("../models")
 
 const addReply = async (request, h) => {
     const { content } = request.payload;
@@ -18,7 +18,12 @@ const addReply = async (request, h) => {
 
 const getAllRepliesByComment = async (request, h) => {
     const { commentId } = request.params;
-    const replies = await Reply.findAll({where: { commentId : commentId}})
+    const replies = await Reply.findAll({where: { commentId : commentId}, 
+        include: {
+            model: User,
+            attributes: { exclude: ['password'] }
+        }
+    })
     
     const response = h.response({
         status: 'success',
@@ -30,7 +35,59 @@ const getAllRepliesByComment = async (request, h) => {
     return response;
 };
 
+const likeReply = async (request, h) => {
+  const { replyId } = request.params;
+  const reply = await Reply.findByPk(replyId);
+
+  if (!reply) {
+    return h
+      .response({
+        status: "error",
+        message: "Reply not found",
+      })
+      .code(404);
+  }
+
+  reply.likes += 1;
+  await reply.save();
+
+  return h
+    .response({
+      status: "success",
+      message: "Reply liked successfully",
+      data: reply,
+    })
+    .code(200);
+};
+
+const unlikeReply = async (request, h) => {
+  const { replyId } = request.params;
+  const reply = await Reply.findByPk(replyId);
+
+  if (!reply) {
+    return h
+      .response({
+        status: "error",
+        message: "Reply not found",
+      })
+      .code(404);
+  }
+
+  reply.likes -= 1;
+  await reply.save();
+
+  return h
+    .response({
+      status: "success",
+      message: "Reply unliked successfully",
+      data: reply,
+    })
+    .code(200);
+};
+
 module.exports = {
-    addReply,
-    getAllRepliesByComment
+  addReply,
+  getAllRepliesByComment,
+  likeReply,
+  unlikeReply,
 };

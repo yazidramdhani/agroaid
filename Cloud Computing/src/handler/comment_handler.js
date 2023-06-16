@@ -1,4 +1,4 @@
-const {Comment} = require("../models")
+const {Comment, User} = require("../models")
 
 const addComment = async (request, h) => {
   const { content } = request.payload;
@@ -18,7 +18,12 @@ const addComment = async (request, h) => {
 
 const getAllCommentsByPost = async (request, h) => {
     const { postId } = request.params;
-    const comments = await Comment.findAll({where: { postId : postId}})
+    const comments = await Comment.findAll({where: { postId : postId}, 
+      include: {
+        model: User,
+        attributes: { exclude: ['password'] }
+      }
+    })
     
     const response = h.response({
         status: 'success',
@@ -30,7 +35,59 @@ const getAllCommentsByPost = async (request, h) => {
     return response;
 };
 
+const likeComment = async (request, h) => {
+  const { commentId } = request.params;
+  const comment = await Comment.findByPk(commentId);
+
+  if (!comment) {
+    return h
+      .response({
+        status: "error",
+        message: "Comment not found",
+      })
+      .code(404);
+  }
+
+  comment.likes += 1;
+  await comment.save();
+
+  return h
+    .response({
+      status: "success",
+      message: "Comment liked successfully",
+      data: comment,
+    })
+    .code(200);
+};
+
+const unlikeComment = async (request, h) => {
+  const { commentId } = request.params;
+  const comment = await Comment.findByPk(commentId);
+
+  if (!comment) {
+    return h
+      .response({
+        status: "error",
+        message: "Comment not found",
+      })
+      .code(404);
+  }
+
+  comment.likes -= 1;
+  await comment.save();
+
+  return h
+    .response({
+      status: "success",
+      message: "Comment unliked successfully",
+      data: comment,
+    })
+    .code(200);
+};
+
 module.exports = {
   addComment,
-  getAllCommentsByPost
+  getAllCommentsByPost,
+  likeComment,
+  unlikeComment,
 };

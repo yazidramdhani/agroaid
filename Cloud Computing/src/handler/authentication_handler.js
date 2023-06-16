@@ -1,12 +1,13 @@
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
 const { User } = require("../models");
+require('dotenv').config();
 
-const JWT_SECRET = 'your-secret-key';
+const JWT_SECRET = process.env.JWT_SECRET;
 
 const signupHandler = async (request, h) => {
     try {
-        const { username, email, password } = request.payload;
+        const { username, fullname,  email, password } = request.payload;
 
         const existingUser = await User.findOne({ where: { email } });
         if (existingUser) {
@@ -15,11 +16,13 @@ const signupHandler = async (request, h) => {
 
         const hashedPassword = await bcrypt.hash(password, 10);
 
-        const newUser = await User.create({ username, email, password: hashedPassword });
+        const newUser = await User.create({ username, fullname, email, password: hashedPassword });
 
         const token = generateToken(newUser.userId, JWT_SECRET, '1d')
 
-        return h.response({ message: 'Signup successful', token }).code(201);
+        delete newUser.dataValues.password
+
+        return h.response({ message: 'Signup successful', token, user: newUser }).code(201);
     } catch (error) {
         console.error(error);
         return h.response({ message: 'Internal server error' }).code(500);
@@ -30,7 +33,7 @@ const loginHandler = async (request, h) => {
     const { email, password } = request.payload;
 
     const user = await User.findOne({where: { email }});
-  
+    
     if (!user) {
       return h.response({ message: 'User not found' }).code(401);
     }
@@ -43,7 +46,9 @@ const loginHandler = async (request, h) => {
   
     const token = generateToken(user.userId, JWT_SECRET, '1d')
   
-    return h.response({ message: 'Login successful', token: token }).code(200);
+    delete user.dataValues.password
+
+    return h.response({ message: 'Login successful', token: token, user: user }).code(200);
 };
 
 // TODO: gaperlu server side, cukup hapus token di client side
