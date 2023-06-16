@@ -1,4 +1,7 @@
 # Agroaid
+<p align="center">
+<img src="https://github.com/farreljordan80/agroaid/blob/main/Logo-Agroaid.png" width="250"  />
+</p>
 Agroaid, a groundbreaking mobile application designed to revolutionize plant disease detection in Indonesia. Agroaid is not just another generic plant disease detection app. It is a locally-built solution tailored specifically to the needs of Indonesian farmers and gardening enthusiasts, leveraging the power of deep learning and the familiarity of the Indonesian language.
 
 ## Training the Model
