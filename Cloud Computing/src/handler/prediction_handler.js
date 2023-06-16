@@ -21,12 +21,12 @@ const predictImage = async (request, h) => {
             },
         });
     
-        const filePath = 'prediction/' + uuidv4() + '-' + image.hapi.filename
+        let filePath = 'prediction/' + uuidv4() + '-' + image.hapi.filename
         await uploadImageToStorage(image, filePath)
 
         const prediction = await Prediction.create({
             ...responseMl.data,
-            photoUrl : `https://storage.googleapis.com/agroaid_bucket/${filePath}`,
+            photoUrl : `https://storage.googleapis.com/agroaid_bucket/${filePath.replaceAll(" ", "%20")}`,
             userId: userId
         });
 
