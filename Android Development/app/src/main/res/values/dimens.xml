@@ -1,0 +1,9 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="stroke_size">2dp</dimen>
+    <dimen name="textbox_radius">16dp</dimen>
+    <dimen name="auth_textbox_width">300dp</dimen>
+    <dimen name="auth_textbox_height">72dp</dimen>
+    <dimen name="forum_threadlist">150dp</dimen>
+    <dimen name="nav_text" >8sp</dimen>
+</resources>
