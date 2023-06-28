@@ -22,6 +22,8 @@ const signupHandler = async (request, h) => {
 
         delete newUser.dataValues.password
 
+        newUser.dataValues.token = token
+
         return h.response({ message: 'Signup successful', token, user: newUser }).code(201);
     } catch (error) {
         console.error(error);
@@ -47,6 +49,8 @@ const loginHandler = async (request, h) => {
     const token = generateToken(user.userId, JWT_SECRET, '1d')
   
     delete user.dataValues.password
+
+    user.dataValues.token = token
 
     return h.response({ message: 'Login successful', token: token, user: user }).code(200);
 };

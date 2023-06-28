@@ -1,0 +1,67 @@
+<resources>
+    <string name="app_name">Agroaid</string>
+    <string name="action_settings">Settings</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="home_label">Home</string>
+    <string name="forum_label">Forum</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+    <string name="name_input">Nama</string>
+    <string name="uname_input">Nama Pengguna</string>
+    <string name="email_input">Email</string>
+    <string name="pass_input">Kata Sandi</string>
+    <string name="dummy">This is a dummy text</string>
+    <string name="cam">Kamera</string>
+
+    <string name="lorem_ipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in scelerisque sem. Mauris volutpat, dolor id interdum ullamcorper, risus dolor egestas lectus, sit amet mattis purusdui nec risus. Maecenas non sodales nisi, vel dictum dolor. Class aptent taciti sociosqu adlitora torquent per conubia nostra, per inceptos himenaeos. Suspendisse blandit eleifenddiam, vel rutrum tellus vulputate quis. Aliquam eget libero aliquet, imperdiet nisl a,ornare ex. Sed rhoncus est ut libero porta lobortis. Fusce in dictum tellus.\n\nSuspendisse interdum ornare ante. Aliquam nec cursus lorem. Morbi id magna felis. Vivamusegestas, est a condimentum egestas, turpis nisl iaculis ipsum, in dictum tellus dolor sedneque. Morbi tellus erat, dapibus ut sem a, iaculis tincidunt dui. Interdum et malesuadafames ac ante ipsum primis in faucibus. Curabitur et eros porttitor, ultricies urna vitae,molestie nibh.
+        Phasellus at commodo eros, non aliquet metus. Sed maximus nisl nec dolor bibendum, vel congue leo egestas.
+    </string>
+    <string name="scanned_img">Scanned Images</string>
+    <string name="hello">Hi, </string>
+    <string name="welcome">Selamat datang kembali ke Agroaid</string>
+    <string name="last_scan">Riwayat Pemindaian</string>
+    <string name="dontHaveAcc">Tidak memiliki akun?</string>
+    <string name="login">Masuk</string>
+    <string name="signup">Daftar</string>
+    <string name="haveAcc">Punya akun?</string>
+    <string name="account">Account</string>
+    <string name="my_account">My Account</string>
+    <string name="notifications">Notifications</string>
+    <string name="forum">Forum</string>
+    <string name="home">Utama</string>
+    <string name="new_post">new post</string>
+    <string name="forum_header">Agroaid Forums</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="apple">Apel</string>
+    <string name="select_plant_header">Pilih tanaman yang akan dipindai</string>
+    <string name="cherry">Buah Ceri</string>
+    <string name="corn">Jagung</string>
+    <string name="grape">Anggur</string>
+    <string name="peach">Buah Persik</string>
+    <string name="pepperbell">Paprika</string>
+    <string name="potato">Kentang</string>
+    <string name="strawberry">Stroberi</string>
+    <string name="tomato">Tomat</string>
+    <string name="predict">Pindai</string>
+    <string name="gallery">Galeri</string>
+    <string name="camera">Kamera</string>
+    <string name="gejala">Gejala</string>
+    <string name="nama_penyakit">Nama Penyakit</string>
+    <string name="kondisi">Kondisi</string>
+    <string name="sebab">Sebab</string>
+    <string name="pengobatan">Pengobatan</string>
+    <string name="solusi">Solusi</string>
+
+    <string-array name="dummy_title">
+        <item>Penyakit Kambuh Tanaman</item>
+        <item>Pohon Anggur Malas</item>
+        <item>Arjun Tips Series #1: Anti Penyakitan!</item>
+    </string-array>
+
+    <string-array name="dummy_content">
+        <item>Kenapa ya tanaman saya penyakitan melulu sudah diobatin kambuh terus. \nApa gara gara disiram pake air fanta ya?</item>
+        <item>Heyo guys! Mo nanya nih knp y pohon anggur gw ga mau berbuah udah beberapa bulan ini, di batangnya ada putih-putih salju gitu gw liat. \nThanks Agroaid User!</item>
+        <item>Karena saya liat ada beberapa postingan yang mengeluhkan tanamannya penyakitan, disini saya bakal bagiin tips nih buat kalian. \nPantengin trus yah~~</item>
+    </string-array>
+
+</resources>

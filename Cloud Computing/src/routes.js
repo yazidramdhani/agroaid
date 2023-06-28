@@ -14,8 +14,8 @@ const {
    likePost,
    unlikePost
 } = require('./handler/post_handler');
-const { addComment, getAllCommentsByPost } = require('./handler/comment_handler');
-const { addReply, getAllRepliesByComment } = require('./handler/reply_handler');
+const { addComment, getAllCommentsByPost, likeComment, unlikeComment  } = require('./handler/comment_handler');
+const { addReply, getAllRepliesByComment, likeReply, unlikeReply } = require('./handler/reply_handler');
 const { predictImage, getAllPredictions } = require('./handler/prediction_handler');
 
 const routes = [
@@ -100,12 +100,12 @@ const routes = [
    },
    {
       method: "POST",
-      path: "/reply/{replyId}/like",
+      path: "/replies/{replyId}/like",
       handler: likeReply,
    },
    {
       method: "POST",
-      path: "/reply/{replyId}/unlike",
+      path: "/replies/{replyId}/unlike",
       handler: unlikeReply,
    },
    {
